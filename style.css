@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --primary-color: #121212;
+  --secondary-color: #FFDE53;
+  --third-color: #F15480;
+  --light-color: #FAF1F4;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-color);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.game {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_score {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1rem 1fr;
+  border: 2px solid var(--light-color);
+  height: 20rem;
+  width: 50rem;
+  color: var(--light-color)
+}
+
+.game_score-user,
+.game_score-computer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+}
+
+.game_score-user--name,
+.game_score-computer--name {
+  font-size: 1.5rem;
+  background-color: var(--third-color);
+  padding: 0.8rem;
+  align-self: center;
+}
+
+.game_score-user--name {
+  margin-left: -2.5rem;
+  justify-self: start;
+}
+
+.game_score-computer--name {
+  margin-right: -4rem;
+  justify-self: end;
+}
+
+.game_score-user--choice,
+.game_score-computer--choice {
+  opacity: 0;
+  font-size: 3.5rem;
+  justify-self: center;
+  align-self: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--light-color);
+  padding: 1.5rem;
+}
+
+.game_score-computer--score,
+.game_score-user--score,
+.game_score-separator {
+  align-self: center;
+  justify-self: center;
+  font-size: 4rem;
+}
+
+.game_result {
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+.game_choose-button {
+  color: var(--light-color);
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 50%;
+  padding: 2.5rem;
+  cursor: pointer;
+  margin: 3rem;
+  font-size: 5rem;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  color: #999999;
+}
+
+.game_choose-button:hover:enabled {
+  box-shadow: 0 0 10px var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.game_reset-button {
+  background-color: var(--third-color);
+  border-radius: 10px;
+  border: none;
+  color: var(--light-color);
+  font-family: inherit;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.win {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(233, 13, 13)
+  }
+
+  25% {
+    color: rgb(233, 211, 13);
+  }
+
+  50% {
+    color: rgb(64, 233, 13);
+    transform: scale(1.5);
+  }
+
+  75% {
+    color: rgb(0, 38, 253);
+  }
+
+  100% {
+    color: rgb(194, 0, 253)
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header_title {
+    font-size: 3rem;
+  }
+
+  .game_score {
+    width: 30rem;
+  }
+
+  .game_score-user,
+  .game_score-computer {
+    grid-template-columns: 1fr 0;
+    grid-template-rows: 2rem 10rem;
+  }
+
+  .game_score-user--name,
+  .game_score-computer--name {
+    grid-row: 1/1;
+    margin: 0;
+    margin-top: -25%;
+    justify-self: center;
+  }
+
+  .game_score-user--choice,
+  .game_score-computer--score {
+    grid-row: 2/2;
+    justify-self: start;
+    margin-left: 2rem;
+  }
+
+  .game_score-computer--choice,
+  .game_score-user--score {
+    grid-row: 2/2;
+    justify-self: end;
+    margin-right: 2rem;
+  }
+
+  .game_score-separator {
+    margin-top: 1rem;
+  }
+
+  .game_result {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+
+  .game_choose-button {
+    margin: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+}

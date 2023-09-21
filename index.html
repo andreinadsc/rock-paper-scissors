@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="./resources/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon-16x16.png">
+    <link rel="shortcut icon" href="./resources/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header_title">Rock Paper Scissors</h1>
+    </header>
+    <main class="game">
+        <div class="game_score">
+            <div class="game_score-user">
+                <span class="game_score-user--name">User</span>
+                <i class="game_score-user--choice fa-solid"></i>
+                <span class="game_score-user--score">0</span>
+            </div>
+            <span class="game_score-separator">:</span>
+            <div class="game_score-computer">
+                <span class="game_score-computer--score">0</span>
+                <i class="game_score-computer--choice fa-solid"></i>
+                <span class="game_score-computer--name">Computer</span>
+            </div>
+        </div>
+        <div class="game_result">
+            <p>Try your luck!</p>
+        </div>
+        <div class="game_choose">
+            <button class="game_choose-button">
+                <i class="game_choose-icon fa-solid fa-hand-back-fist"></i>
+            </button>
+            <button class="game_choose-button">
+                <i class="game_choose-icon fa-solid fa-hand"></i>
+            </button>
+            <button class="game_choose-button">
+                <i class="game_choose-icon fa-solid fa-hand-scissors"></i>
+            </button>
+        </div>
+        <div class="game_reset">
+            <button class="game_reset-button">Reset 
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
